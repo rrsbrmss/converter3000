@@ -105,7 +105,7 @@ class MainWindow(QWidget):
         if self.process_as_single_element_checkbox.isChecked():
             # Если чекбокс установлен, обрабатываем каждую строку как единое целое
             lines = input_data.split('\n')  # Разделение на строки
-            all_elements = [line for line in lines if line.strip()]  # Сохраняем строки без удаления пробелов
+            all_elements = [line.strip() for line in lines if line.strip()]  # Сохраняем строки без удаления пробелов
             result = f'{start_chars}{separator.join(all_elements)}{end_chars}'  # Объединяем строки с разделителем
         else:
             # Иначе разбиваем текст на строки и далее каждую строку на элементы по пробелам
@@ -151,6 +151,6 @@ class MainWindow(QWidget):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
-    window.setWindowIcon(QIcon("splitmerge.ico"))
+    window.setWindowIcon(QIcon("converter3000.ico"))
     window.show()
     sys.exit(app.exec())
